@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const userIP = data.ip;
   
         // Send user's IP address to the server for verification
-        fetch('http://localhost:3000/verify-access', {
+        fetch(`${process.env.URL}/verify-access`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
