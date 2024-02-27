@@ -20,7 +20,20 @@ const ipSchema = new mongoose.Schema({
   ipAddress: String,
 });
 
+// Define schema for storing form data
+const formDataSchema = new mongoose.Schema({
+  type1: String,
+  type2: String,
+  relationshipFacts: [String],
+  relationshipRoles: String,
+  movieNames: [String],
+  bookNames: [String],
+  animeNames: [String]
+});
+
+
 const IP = mongoose.model('IP', ipSchema);
+const FormData = mongoose.model('FormData', formDataSchema);
 
 // Middleware to parse JSON data
 app.use(bodyParser.json());
@@ -45,6 +58,34 @@ app.post('/verify-access', async (req, res) => {
   }
 });
 
+
+// Route to handle form data submission
+app.post('/upload-data', async (req, res) => {
+    try {
+        // Extract form data from request body
+        const { type1, type2, relationshipFacts, relationshipRoles, movieNames, bookNames, animeNames } = req.body;
+
+        // Create new FormData document
+        const formData = new FormData({
+            type1,
+            type2,
+            relationshipFacts,
+            relationshipRoles,
+            movieNames,
+            bookNames,
+            animeNames
+        });
+
+        // Save form data to MongoDB
+        await formData.save();
+
+        // Respond with success message
+        res.status(200).json({ message: 'Form data uploaded successfully' });
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
 
 // Start the server
 const PORT = process.env.PORT || 3000;

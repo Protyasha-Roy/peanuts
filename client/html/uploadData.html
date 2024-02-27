@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Data</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Add custom styles -->
+    <style>
+        /* Center the form vertically and horizontally */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="w-full max-w-3xl md:max-w-5xl">
+        <h1 class="text-2xl font-bold mb-4 text-center text-green-600">Upload Data</h1>
+        <p class="text-center text-red-600 fixed top-10 left-1/2 transform -translate-x-1/2 shadow p-2 rounded bg-white" id="message"></p>
+    
+        <form action="/upload-data" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div class="flex flex-wrap -mx-2 mb-4">
+                <div class="w-full md:w-1/2 px-2 mb-4">
+                    <label for="type1" class="block text-gray-700 text-sm font-bold mb-2">Type 1:</label>
+                    <input type="text" id="type1" name="type1" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                </div>
+    
+                <div class="w-full md:w-1/2 px-2 mb-4">
+                    <label for="type2" class="block text-gray-700 text-sm font-bold mb-2">Type 2:</label>
+                    <input type="text" id="type2" name="type2" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                </div>
+            </div>
+    
+            <div class="flex flex-wrap -mx-2 mb-4">
+                <div class="w-full md:w-1/2 px-2 mb-4">
+                    <label for="relationshipFacts" class="block text-gray-700 text-sm font-bold mb-2">Relationship Facts:</label>
+                    <textarea id="relationshipFacts" name="relationshipFacts" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required></textarea>
+                </div>
+    
+                <div class="w-full md:w-1/2 px-2 mb-4">
+                    <label for="relationshipRoles" class="block text-gray-700 text-sm font-bold mb-2">Relationship Roles Summary with Metaphor:</label>
+                    <textarea id="relationshipRoles" name="relationshipRoles" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required></textarea>
+                </div>
+            </div>
+    
+            <div class="flex flex-wrap -mx-2 mb-4">
+                <div class="w-full md:w-1/2 px-2 mb-4">
+                    <label for="movieNames" class="block text-gray-700 text-sm font-bold mb-2">Movies:</label>
+                    <textarea id="movieNames" rows="4" name="movieNames" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required></textarea>
+                </div>
+    
+                <div class="w-full md:w-1/2 px-2 mb-4">
+                    <label for="bookNames" class="block text-gray-700 text-sm font-bold mb-2">Books:</label>
+                    <textarea id="bookNames" rows="4" name="bookNames" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required></textarea>
+                </div>
+            </div>
+    
+            <div class="flex flex-wrap -mx-2 mb-4">
+                <div class="w-full md:w-1/2 px-2 mb-4">
+                    <label for="animeNames" class="block text-gray-700 text-sm font-bold mb-2">Animes:</label>
+                    <textarea id="animeNames" rows="4" name="animeNames" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required></textarea>
+                </div>
+            </div>
+    
+            <div class="flex items-center justify-center">
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    Submit
+                </button>
+            </div>            
+        </form>
+    </div>
+    <script src="../js/uploadData.js"></script>
+</body>
+</html>
