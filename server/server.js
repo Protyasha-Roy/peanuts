@@ -87,6 +87,29 @@ app.post('/upload-data', async (req, res) => {
     }
 });
 
+// Route to handle the GET request for compatibility calculation
+app.get('/calculate-compatibility', async (req, res) => {
+  try {
+      // Retrieve MBTI types from query parameters
+      const yourMbtiType = req.query.yourMbtiType;
+      const partnerMbtiType = req.query.partnerMbtiType;
+
+      // Query the database to find matching MBTI types
+      const formData = await FormData.findOne({ type1: yourMbtiType, type2: partnerMbtiType });
+
+      if (formData) {
+          // If matching data is found, send it back to the client
+          res.json(formData);
+      } else {
+          // If no matching data is found, send a 404 Not Found response
+          res.status(404).json({ error: 'Compatibility data not found' });
+      }
+  } catch (error) {
+      console.error('Error:', error);
+      res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 // Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

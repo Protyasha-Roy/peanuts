@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function() {
       .then(response => response.json())
       .then(data => {
         const userIP = data.ip;
-        console.log(userIP);
   
         // Send user's IP address to the server for verification
         fetch('http://localhost:3000/verify-access', {
@@ -15,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function() {
           body: JSON.stringify({ ipAddress: userIP })
         })
         .then(response => {
-            console.log(response)
           if (response.ok) {
             console.log('successful');
           } else {

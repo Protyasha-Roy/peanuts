@@ -3,11 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peanuts</title>
+    <title>Peanuts - Home</title>
+    <!-- Include Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Add custom styles -->
+    <style>
+        /* Center the form horizontally */
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
 </head>
-<body>
-    <h1>home</h1>
+<body class="bg-gray-100">
+    <div class="w-full max-w-xl mx-auto">
+        <div class="text-center py-8">
+            <img src="../peanuts-logo.png" alt="Peanuts Logo" class="mt-4 mx-auto" style="max-width: 50px;">
+            <h1 class="text-3xl font-bold text-red-400">Peanuts</h1>
+        </div>
+    
+        <p class="text-center text-gray-600 mb-8">How nuts are you two together?</p>
+    
+        <form id="compatibility-form" action="/calculate-compatibility" method="POST" class="px-8 pt-6 pb-8 mb-4">
+            <div class="mb-4">
+                <label for="yourMbtiType" class="block text-gray-600 text-lg mb-2 text-right">Your MBTI Type</label>
+                <select id="yourMbtiType" name="yourMbtiType" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    <option value="INTP">INTP</option>
+                    <option value="INTJ">INTJ</option>
+                    <option value="INFP">INFP</option>
+                    <option value="INFJ">INFJ</option>
+                    <option value="ISTP">ISTP</option>
+                    <option value="ISTJ">ISTJ</option>
+                    <option value="ISFP">ISFP</option>
+                    <option value="ISFJ">ISFJ</option>
+                    <option value="ENTP">ENTP</option>
+                    <option value="ENTJ">ENTJ</option>
+                    <option value="ENFP">ENFP</option>
+                    <option value="ENFJ">ENFJ</option>
+                    <option value="ESTP">ESTP</option>
+                    <option value="ESTJ">ESTJ</option>
+                    <option value="ESFP">ESFP</option>
+                    <option value="ESFJ">ESFJ</option>
+
+                </select>
+            </div>
+    
+            <div class="mb-4">
+                <label for="partnerMbtiType" class="block text-gray-700 text-lg mb-2 text-right">Your Partner's MBTI Type</label>
+                <select id="partnerMbtiType" name="partnerMbtiType" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    <option value="INTJ">INTJ</option>
+                    <option value="INTP">INTP</option>
+                    <option value="INFP">INFP</option>
+                    <option value="INFJ">INFJ</option>
+                    <option value="ISTP">ISTP</option>
+                    <option value="ISTJ">ISTJ</option>
+                    <option value="ISFP">ISFP</option>
+                    <option value="ISFJ">ISFJ</option>
+                    <option value="ENTP">ENTP</option>
+                    <option value="ENTJ">ENTJ</option>
+                    <option value="ENFP">ENFP</option>
+                    <option value="ENFJ">ENFJ</option>
+                    <option value="ESTP">ESTP</option>
+                    <option value="ESTJ">ESTJ</option>
+                    <option value="ESFP">ESFP</option>
+                    <option value="ESFJ">ESFJ</option>
+
+                </select>
+            </div>
+    
+            <div class="flex justify-center">
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg focus:outline-none focus:shadow-outline w-full">
+                    Go nuts
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script src="../js/home.js"></script>
+    
 </body>
 </html>

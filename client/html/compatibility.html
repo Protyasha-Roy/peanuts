@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compatibility Results</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <div class="bg-white shadow-md rounded px-8 py-6 mb-4">
+            <h2 class="text-xl font-bold mb-2 text-center text-red-400">MBTI Compatibility</h2>
+            <p><span class="font-bold text-gray-600">Your MBTI Type:</span> <span id="yourMbtiType"></span></p>
+            <p><span class="font-bold text-gray-600">Partner's MBTI Type:</span> <span id="partnerMbtiType"></span></p>
+            <p><span class="font-bold text-gray-600">Relationship Facts:</span></p>
+            <ul id="relationshipFacts" class="list-disc pl-5"></ul>
+            <p><span class="font-bold text-gray-600">Metaphor of your relationship:</span> <span id="relationshipRoles"></span></p>
+            <p><span class="font-bold text-gray-600">Movies to watch:</span></p>
+            <ul id="movieNames" class="list-disc pl-5"></ul>
+            <p><span class="font-bold text-gray-600">Animes to watch:</span></p>
+            <ul id="animeNames" class="list-disc pl-5"></ul>
+            <p><span class="font-bold text-gray-600">Books to read:</span></p>
+            <ul id="bookNames" class="list-disc pl-5"></ul>
+        </div>
+    </div>
+
+   <script src="../js/compatibility.js"></script>
+
+</body>
+
+</html>
