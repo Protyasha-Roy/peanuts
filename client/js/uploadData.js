@@ -24,7 +24,7 @@ const handleSubmit = async (event) => {
 
     try {
         // Send form data to server
-        const response = await fetch(`${process.env.URL}/upload-data`, {
+        const response = await fetch(`https://peanuts.onrender.com/upload-data`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

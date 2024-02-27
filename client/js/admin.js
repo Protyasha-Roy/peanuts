@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const userIP = data.ip;
   
         // Send user's IP address to the server for verification
-        fetch(`${process.env.URL}/verify-access`, {
+        fetch(`https://peanuts.onrender.com/verify-access`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

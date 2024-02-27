@@ -6,7 +6,7 @@ async function fetchCompatibility() {
         const partnerMbtiType = urlParams.get('partnerMbtiType');
 
         // Make a GET request to the server
-        const response = await fetch(`${process.env.URL}/calculate-compatibility?yourMbtiType=${yourMbtiType}&partnerMbtiType=${partnerMbtiType}`);
+        const response = await fetch(`https://peanuts.onrender.com/calculate-compatibility?yourMbtiType=${yourMbtiType}&partnerMbtiType=${partnerMbtiType}`);
         
         if (!response.ok) {
             throw new Error('Failed to fetch compatibility data');

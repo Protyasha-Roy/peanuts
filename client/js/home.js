@@ -9,3 +9,5 @@ form.addEventListener('submit', function(event) {
     // Redirect to the compatibility page with URL parameters
     window.location.href = `compatibility.html?yourMbtiType=${yourMbtiType}&partnerMbtiType=${partnerMbtiType}`;
 });
+
+console.log(process.env.API_URL)
