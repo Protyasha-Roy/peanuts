@@ -47,8 +47,9 @@ app.post('/verify-access', async (req, res) => {
     const allowedIP = process.env.MY_IP;
     const alternativeIp = process.env.ALTERNATIVE_IP;
     const alternativeIp2 = process.env.ALTERNATIVE_IP2;
+    const alternativeIp3 = process.env.ALTERNATIVE_IP3;
 
-    if (userIP === allowedIP || userIP === alternativeIp || userIP === alternativeIp2) {
+    if (userIP === allowedIP || userIP === alternativeIp || userIP === alternativeIp2 || userIP === alternativeIp3) {
       res.sendStatus(200); // Access granted
     } else {
       res.sendStatus(403); // Access forbidden
