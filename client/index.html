@@ -6,8 +6,25 @@
   <title>Peanuts</title>
   <link rel="shortcut icon" href="./peanuts-logo.png" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <style>
+    .loader{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 100px;
+    }
+    #homeImage {
+      max-width: 150px;
+    }
+  </style>
 </head>
 <body>
+  <div class="loader">
+    <img id="homeImage" src="peanuts-logo.png" alt="peanuts-logo">
+    <h1 class="text-red-400 text-3xl font-bold">Peanuts</h1>
+  </div>
   <script src="./js/app.js"></script>
 </body>
 </html>
